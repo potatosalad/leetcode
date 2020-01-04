@@ -11,7 +11,7 @@
  *
  */
 pub struct Solution {}
-use super::util::linked_list::{to_list, ListNode};
+pub use super::util::linked_list::{to_list, ListNode};
 
 // submission codes start here
 
