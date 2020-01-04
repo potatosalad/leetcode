@@ -93,7 +93,7 @@ fn main() {
             .append(true)
             .open("./src/lib.rs")
             .unwrap();
-        writeln!(lib_file, "mod {};", file_name).unwrap();
+        writeln!(lib_file, "pub mod {};", file_name).unwrap();
         break;
     }
 }
