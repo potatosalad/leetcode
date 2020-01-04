@@ -17,8 +17,8 @@ fn main() {
     let mut solved_ids = get_solved_ids();
     loop {
         println!("Please enter a frontend problem id, or \"random\" to generate a random one.");
-        let mut is_random = false;
-        let mut id: u32 = 0;
+        // let mut is_random = false;
+        let id: u32;
         let mut id_arg = String::new();
         io::stdin()
             .read_line(&mut id_arg)
@@ -28,7 +28,7 @@ fn main() {
             "random" => {
                 println!("You select random mode.");
                 id = generate_random_id(&solved_ids);
-                is_random = true;
+                // is_random = true;
                 println!("Generate random problem: {}", &id);
             }
             _ => {
@@ -100,7 +100,7 @@ fn main() {
 
 fn generate_random_id(except_ids: &[u32]) -> u32 {
     use rand::Rng;
-    use std::fs;
+    // use std::fs;
     let mut rng = rand::thread_rng();
     loop {
         let res: u32 = rng.gen_range(1, 1106);

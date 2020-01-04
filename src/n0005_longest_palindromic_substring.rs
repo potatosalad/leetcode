@@ -48,7 +48,7 @@ impl Solution {
             .flat_map(|x| s.as_bytes().windows(x).filter(is_palindrome))
             .map(|bytes| String::from_utf8(bytes.to_vec()).unwrap())
             .next()
-            .unwrap_or(String::new())
+            .unwrap_or_default()
     }
 
     pub fn longest_palindrome_unicode(s: String) -> String {
@@ -59,7 +59,7 @@ impl Solution {
             .flat_map(|x| v.windows(x).filter(is_palindrome_unicode))
             .map(|graphemes| graphemes.join(""))
             .next()
-            .unwrap_or(String::new())
+            .unwrap_or_default()
     }
 }
 
