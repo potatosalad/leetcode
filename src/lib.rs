@@ -11,3 +11,4 @@ pub mod n0005_longest_palindromic_substring;
 pub mod n0006_zigzag_conversion;
 pub mod n0010_regular_expression_matching;
 pub mod n0014_longest_common_prefix;
+pub mod n0038_count_and_say;
