@@ -66,7 +66,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_34() {
+    fn test_0034() {
         assert_eq!(
             vec![3, 4],
             Solution::search_range(vec![5, 7, 7, 8, 8, 10], 8)

@@ -61,7 +61,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_67() {
+    fn test_0067() {
         assert_eq!(
             "0".to_owned(),
             Solution::add_binary("0".to_owned(), "0".to_owned()),

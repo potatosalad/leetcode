@@ -55,7 +55,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_14() {
+    fn test_0014() {
         assert_eq!(
             Solution::longest_common_prefix(vec![
                 "".to_string(),

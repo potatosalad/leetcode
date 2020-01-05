@@ -75,7 +75,7 @@ fn main() {
             .replace("__PROBLEM_TITLE__", &problem.title)
             .replace("__PROBLEM_DESC__", &build_desc(&problem.content))
             .replace("__PROBLEM_DEFAULT_CODE__", &code.default_code)
-            .replace("__PROBLEM_ID__", &format!("{}", problem.question_id))
+            .replace("__PROBLEM_ID__", &format!("{:04}", problem.question_id))
             .replace("__EXTRA_USE__", &parse_extra_use(&code.default_code));
 
         let mut file = fs::OpenOptions::new()

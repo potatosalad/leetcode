@@ -79,7 +79,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_19() {
+    fn test_0019() {
         assert_eq!(
             Solution::remove_nth_from_end(to_list(vec![1, 2, 3, 4, 5]), 2),
             to_list(vec![1, 2, 3, 5])

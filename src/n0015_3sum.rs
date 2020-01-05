@@ -81,7 +81,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_15() {
+    fn test_0015() {
         assert_eq!(
             Solution::three_sum(vec![-1, 0, 1, 2, -1, -4]),
             vec![vec![-1, -1, 2], vec![-1, 0, 1]]

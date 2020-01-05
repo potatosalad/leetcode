@@ -51,7 +51,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_16() {
+    fn test_0016() {
         assert_eq!(Solution::three_sum_closest(vec![-1, 2, 1, -4], 1), 2);
         assert_eq!(Solution::three_sum_closest(vec![1, 2, 3], 1), 6);
         assert_eq!(

@@ -39,7 +39,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_136() {
+    fn test_0136() {
         assert_eq!(Solution::single_number(vec![2, 2, 1]), 1);
         assert_eq!(Solution::single_number(vec![4, 1, 2, 1, 2]), 4);
     }

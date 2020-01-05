@@ -78,7 +78,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_3() {
+    fn test_0003() {
         assert_eq!(
             Solution::length_of_longest_substring("abcabcbb".to_string()),
             3

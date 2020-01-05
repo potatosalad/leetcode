@@ -60,7 +60,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_32() {
+    fn test_0032() {
         assert_eq!(4, Solution::longest_valid_parentheses(")()())".to_string()));
         assert_eq!(0, Solution::longest_valid_parentheses(")(".to_string()));
         assert_eq!(2, Solution::longest_valid_parentheses("(()".to_string()));

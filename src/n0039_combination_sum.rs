@@ -78,7 +78,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_39() {
+    fn test_0039() {
         assert_eq!(
             vec![vec![1, 1, 1, 1, 1, 1, 1]],
             Solution::combination_sum(vec![1], 7)

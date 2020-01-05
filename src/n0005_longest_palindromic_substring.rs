@@ -70,7 +70,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_5() {
+    fn test_0005() {
         assert_eq!(Solution::longest_palindrome("aaaaa".to_owned()), "aaaaa");
         assert_eq!(Solution::longest_palindrome("babab".to_owned()), "babab");
         assert_eq!(Solution::longest_palindrome("babcd".to_owned()), "bab");

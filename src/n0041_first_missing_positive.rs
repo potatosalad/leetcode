@@ -70,7 +70,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_41() {
+    fn test_0041() {
         assert_eq!(1, Solution::first_missing_positive(vec![2, 2]));
         assert_eq!(
             1,

@@ -68,7 +68,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_83() {
+    fn test_0083() {
         assert_eq!(
             to_list(vec![1, 2]),
             Solution::delete_duplicates(to_list(vec![1, 1, 2]))

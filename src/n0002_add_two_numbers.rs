@@ -87,7 +87,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_2() {
+    fn test_0002() {
         assert_eq!(
             Solution::add_two_numbers(to_list(vec![2, 4, 3]), to_list(vec![5, 6, 4])),
             to_list(vec![7, 0, 8])

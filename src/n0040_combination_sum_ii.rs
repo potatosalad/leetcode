@@ -102,7 +102,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_40() {
+    fn test_0040() {
         assert_eq!(
             vec![vec![1, 1, 1, 1, 1, 1, 1]],
             Solution::combination_sum2(vec![1, 1, 1, 1, 1, 1, 1], 7)

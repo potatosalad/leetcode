@@ -3,6 +3,8 @@
 set -eo pipefail
 set -x
 
-cargo fmt
-exec cargo test "test_${1}" -- --nocapture --test-threads=1
+n="0000"
+printf -v n "%04d" "${1}"
 
+cargo fmt
+exec cargo test "test_${n}" -- --nocapture --test-threads=1

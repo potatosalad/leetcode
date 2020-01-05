@@ -49,7 +49,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_24() {
+    fn test_0024() {
         assert_eq!(
             Solution::swap_pairs(to_list(vec![1, 2, 3, 4])),
             to_list(vec![2, 1, 4, 3])

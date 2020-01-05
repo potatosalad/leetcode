@@ -70,7 +70,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_6() {
+    fn test_0006() {
         assert_eq!(
             "PINALSIGYAHRPI",
             Solution::convert("PAYPALISHIRING".to_string(), 4)

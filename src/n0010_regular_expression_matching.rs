@@ -221,7 +221,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_10() {
+    fn test_0010() {
         assert_eq!(false, Solution::is_match("aa".to_owned(), "a".to_owned()));
         assert_eq!(true, Solution::is_match("aa".to_owned(), "a*".to_owned()));
         assert_eq!(true, Solution::is_match("ab".to_owned(), ".*".to_owned()));

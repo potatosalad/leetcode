@@ -83,7 +83,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_21() {
+    fn test_0021() {
         assert_eq!(
             Solution::merge_two_lists(to_list(vec![1, 2, 4]), to_list(vec![1, 3, 4])),
             to_list(vec![1, 1, 2, 3, 4, 4])

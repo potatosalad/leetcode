@@ -62,7 +62,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_88() {
+    fn test_0088() {
         let mut vec1 = vec![1, 2, 3, 0, 0, 0];
         let mut vec2 = vec![2, 5, 6];
         Solution::merge(&mut vec1, 3, &mut vec2, 3);

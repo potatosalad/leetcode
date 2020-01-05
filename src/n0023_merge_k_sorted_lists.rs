@@ -84,7 +84,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_23() {
+    fn test_0023() {
         assert_eq!(
             Solution::merge_k_lists(vec![
                 to_list(vec![1, 4, 5]),

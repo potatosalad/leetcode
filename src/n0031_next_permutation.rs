@@ -38,7 +38,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_31() {
+    fn test_0031() {
         let mut vec1 = vec![1, 2, 3, 4, 5];
         Solution::next_permutation(&mut vec1);
         assert_eq!(vec1, vec![1, 2, 3, 5, 4]);

@@ -150,7 +150,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_30() {
+    fn test_0030() {
         assert_eq!(
             Solution::find_substring(
                 "barfoothefoobarman".to_string(),
