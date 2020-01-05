@@ -66,14 +66,15 @@ impl Solution {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use assert_approx_eq::assert_approx_eq;
 
     #[test]
     fn test_4() {
-        assert_eq!(
+        assert_approx_eq!(
             Solution::find_median_sorted_arrays(vec![1, 3], vec![2]),
             2.0
         );
-        assert_eq!(
+        assert_approx_eq!(
             Solution::find_median_sorted_arrays(vec![1, 2], vec![3, 4]),
             2.5
         );
