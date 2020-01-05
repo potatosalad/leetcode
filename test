@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+set -x
+
+cargo fmt
+exec cargo test "test_${1}" -- --nocapture --test-threads=1
+

@@ -16,5 +16,6 @@ pub mod n0021_merge_two_sorted_lists;
 pub mod n0023_merge_k_sorted_lists;
 pub mod n0034_find_first_and_last_position_of_element_in_sorted_array;
 pub mod n0038_count_and_say;
+pub mod n0067_add_binary;
 pub mod n0083_remove_duplicates_from_sorted_list;
 pub mod n0088_merge_sorted_array;
