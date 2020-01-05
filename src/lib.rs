@@ -19,3 +19,4 @@ pub mod n0038_count_and_say;
 pub mod n0067_add_binary;
 pub mod n0083_remove_duplicates_from_sorted_list;
 pub mod n0088_merge_sorted_array;
+pub mod n0136_single_number;
