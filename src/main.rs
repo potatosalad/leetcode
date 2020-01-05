@@ -150,8 +150,13 @@ fn parse_extra_use(code: &str) -> String {
 fn build_desc(content: &str) -> String {
     // TODO: fix this
     content
+        .replace("<br>", "")
+        .replace("<br/>", "")
+        .replace("<br />", "")
         .replace("<strong>", "")
         .replace("</strong>", "")
+        .replace("<small>", "")
+        .replace("</small>", "")
         .replace("<em>", "")
         .replace("</em>", "")
         .replace("</p>", "")

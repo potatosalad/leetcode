@@ -14,7 +14,7 @@
  *
  *
  * 	s could be empty and contains only lowercase letters a-z.
- * 	p could be empty and contains only lowercase letters a-z, and characters like <font face="monospace">?</font> or *.
+ * 	p could be empty and contains only lowercase letters a-z, and characters like ? or *.
  *
  *
  * Example 1:
