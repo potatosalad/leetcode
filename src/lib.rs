@@ -25,6 +25,7 @@ pub mod n0032_longest_valid_parentheses;
 pub mod n0034_find_first_and_last_position_of_element_in_sorted_array;
 pub mod n0038_count_and_say;
 pub mod n0039_combination_sum;
+pub mod n0040_combination_sum_ii;
 pub mod n0041_first_missing_positive;
 pub mod n0067_add_binary;
 pub mod n0083_remove_duplicates_from_sorted_list;
