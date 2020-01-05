@@ -17,6 +17,7 @@ pub mod n0018_4sum;
 pub mod n0019_remove_nth_node_from_end_of_list;
 pub mod n0021_merge_two_sorted_lists;
 pub mod n0023_merge_k_sorted_lists;
+pub mod n0024_swap_nodes_in_pairs;
 pub mod n0034_find_first_and_last_position_of_element_in_sorted_array;
 pub mod n0038_count_and_say;
 pub mod n0067_add_binary;
