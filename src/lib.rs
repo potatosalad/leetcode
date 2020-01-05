@@ -10,6 +10,7 @@ pub mod n0004_median_of_two_sorted_arrays;
 pub mod n0005_longest_palindromic_substring;
 pub mod n0006_zigzag_conversion;
 pub mod n0010_regular_expression_matching;
+pub mod n0011_container_with_most_water;
 pub mod n0014_longest_common_prefix;
 pub mod n0015_3sum;
 pub mod n0016_3sum_closest;
