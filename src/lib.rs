@@ -12,6 +12,7 @@ pub mod n0006_zigzag_conversion;
 pub mod n0010_regular_expression_matching;
 pub mod n0014_longest_common_prefix;
 pub mod n0015_3sum;
+pub mod n0016_3sum_closest;
 pub mod n0019_remove_nth_node_from_end_of_list;
 pub mod n0021_merge_two_sorted_lists;
 pub mod n0023_merge_k_sorted_lists;
