@@ -19,6 +19,7 @@ pub mod n0013_roman_to_integer;
 pub mod n0014_longest_common_prefix;
 pub mod n0015_3sum;
 pub mod n0016_3sum_closest;
+pub mod n0017_letter_combinations_of_a_phone_number;
 pub mod n0018_4sum;
 pub mod n0019_remove_nth_node_from_end_of_list;
 pub mod n0021_merge_two_sorted_lists;
