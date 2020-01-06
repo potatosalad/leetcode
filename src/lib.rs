@@ -37,4 +37,5 @@ pub mod n0053_maximum_subarray;
 pub mod n0067_add_binary;
 pub mod n0083_remove_duplicates_from_sorted_list;
 pub mod n0088_merge_sorted_array;
+pub mod n0125_valid_palindrome;
 pub mod n0136_single_number;
