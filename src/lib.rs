@@ -11,6 +11,7 @@ pub mod n0005_longest_palindromic_substring;
 pub mod n0006_zigzag_conversion;
 pub mod n0007_reverse_integer;
 pub mod n0008_string_to_integer_atoi;
+pub mod n0009_palindrome_number;
 pub mod n0010_regular_expression_matching;
 pub mod n0011_container_with_most_water;
 pub mod n0014_longest_common_prefix;
