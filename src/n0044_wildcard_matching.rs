@@ -71,9 +71,180 @@ pub struct Solution {}
 
 // submission codes start here
 
+// #[derive(Clone, Copy, Debug, PartialEq)]
+// enum WildcardCharacter {
+//     Any,
+//     Exact(char),
+//     Glob,
+// }
+
+// #[derive(Clone, Copy, Debug, PartialEq)]
+// enum WildcardToken {
+//     Single(WildcardCharacter),
+//     ZeroOrMore,
+// }
+
+// #[derive(Clone, Copy, Debug, PartialEq)]
+// enum WildcardMatch {
+//     Char,
+//     Glob,
+//     Fail,
+// }
+
+// impl WildcardCharacter {
+//     fn parse(c: char) -> WildcardCharacter {
+//         match c {
+//             '?' => WildcardCharacter::Any,
+//             '*' => WildcardCharacter::Glob,
+//             _ => WildcardCharacter::Exact(c),
+//         }
+//     }
+
+//     fn is_match(self, c: char) -> bool {
+//         match self {
+//             WildcardCharacter::Any => true,
+//             WildcardCharacter::Exact(x) => c == x,
+//             WildcardCharacter::Glob => unreachable!(),
+//         }
+//     }
+// }
+
+// impl From<WildcardCharacter> for WildcardToken {
+//     fn from(wc: WildcardCharacter) -> WildcardToken {
+//         match wc {
+//             WildcardCharacter::Glob => WildcardToken::ZeroOrMore,
+//             _ => WildcardToken::Single(wc),
+//         }
+//     }
+// }
+
+// impl WildcardToken {
+//     fn parse(pattern: &str) -> Vec<WildcardToken> {
+//         if pattern.is_empty() {
+//             return vec![];
+//         }
+//         let raw_tokens: Vec<WildcardToken> = pattern
+//             .chars()
+//             .map(|c| WildcardToken::from(WildcardCharacter::parse(c)))
+//             .collect();
+//         let mut tokens: Vec<WildcardToken> = Vec::with_capacity(raw_tokens.len());
+//         let mut prev_token = raw_tokens[0];
+//         tokens.push(prev_token);
+//         for &next_token in &raw_tokens[1..] {
+//             if prev_token.is_zero_or_more() && prev_token == next_token {
+//                 continue;
+//             } else {
+//                 prev_token = next_token;
+//                 tokens.push(next_token);
+//             }
+//         }
+//         tokens
+//     }
+
+//     fn try_match(self, c: char) -> WildcardMatch {
+//         match self {
+//             WildcardToken::Single(wc) => {
+//                 if wc.is_match(c) {
+//                     WildcardMatch::Char
+//                 } else {
+//                     WildcardMatch::Fail
+//                 }
+//             }
+//             WildcardToken::ZeroOrMore => WildcardMatch::Glob,
+//         }
+//     }
+
+//     fn is_zero_or_more(self) -> bool {
+//         match self {
+//             WildcardToken::ZeroOrMore => true,
+//             _ => false,
+//         }
+//     }
+// }
+
+// impl WildcardMatch {
+//     fn is_match(chars: &[char], tokens: &[WildcardToken]) -> bool {
+//         if tokens.is_empty() {
+//             return chars.is_empty();
+//         } else if chars.is_empty() {
+//             return tokens.iter().all(|t| t.is_zero_or_more());
+//         }
+//         let mut cidx = 0;
+//         let mut tidx = 0;
+//         loop {
+//             if tidx >= tokens.len() {
+//                 return cidx >= chars.len();
+//             } else if cidx >= chars.len() {
+//                 return (&tokens[tidx..]).iter().all(|t| t.is_zero_or_more());
+//             }
+//             let c = chars[cidx];
+//             let t = tokens[tidx];
+//             match t.try_match(c) {
+//                 WildcardMatch::Char => {
+//                     cidx += 1;
+//                     tidx += 1;
+//                     continue;
+//                 }
+//                 WildcardMatch::Glob => {
+//                     let tail_token_count: usize = (&tokens[tidx..])
+//                         .iter()
+//                         .filter(|t| !t.is_zero_or_more())
+//                         .count();
+//                     if cidx + tail_token_count >= chars.len()
+//                         || (tidx + 1 < tokens.len()
+//                             && WildcardMatch::is_match(&chars[cidx..], &tokens[(tidx + 1)..]))
+//                     {
+//                         tidx += 1;
+//                         continue;
+//                     } else {
+//                         cidx += 1;
+//                         continue;
+//                     }
+//                 }
+//                 WildcardMatch::Fail => {
+//                     return false;
+//                 }
+//             }
+//         }
+//     }
+// }
+
 impl Solution {
+    #![allow(clippy::char_lit_as_u8, clippy::many_single_char_names)]
     pub fn is_match(s: String, p: String) -> bool {
-        false
+        let n = s.len();
+        let m = p.len();
+        if m == 0 {
+            return n == 0;
+        }
+        let mut i = 0;
+        let mut j = 0;
+        let s = s.as_bytes();
+        let p = p.as_bytes();
+        let mut xs = None;
+        let mut xp = None;
+        while i < n {
+            if j < m && (s[i] == p[j] || p[j] == '?' as u8) {
+                i += 1;
+                j += 1;
+            } else if j < m && p[j] == '*' as u8 {
+                xs = Some(i);
+                xp = Some(j);
+                j += 1;
+            } else if let Some(xj) = xp.take() {
+                let xi = xs.take().unwrap();
+                j = xj + 1;
+                i = xi + 1;
+                xs = Some(xi + 1);
+                xp = Some(xj);
+            } else {
+                return false;
+            }
+        }
+        while j < m && p[j] == '*' as u8 {
+            j += 1;
+        }
+        j == m
     }
 }
 
@@ -85,39 +256,24 @@ mod tests {
 
     #[test]
     fn test_0044() {
-        assert_eq!(false, Solution::is_match("aa".to_owned(), "a".to_owned()));
-        assert_eq!(true, Solution::is_match("aa".to_owned(), "a*".to_owned()));
-        assert_eq!(true, Solution::is_match("ab".to_owned(), ".*".to_owned()));
-        assert_eq!(
-            true,
-            Solution::is_match("aab".to_owned(), "c*a*b".to_owned())
-        );
-        assert_eq!(
-            false,
-            Solution::is_match("mississippi".to_owned(), "mis*is*p*.".to_owned())
-        );
-        assert_eq!(
-            true,
-            Solution::is_match("aaaa".to_owned(), "a*a".to_owned())
-        );
-        assert_eq!(
-            true,
-            Solution::is_match("aaaqqbc".to_owned(), "****a*.*bc".to_owned())
-        );
-        assert_eq!(
-            false,
-            Solution::is_match("aaaqqqwkejwklwzbc".to_owned(), "****a*.*yy*bc".to_owned())
-        );
-        assert_eq!(
-            true,
-            Solution::is_match("aaaqqqwkejwklwzybc".to_owned(), "****a*.*yy*bc".to_owned())
-        );
-        assert_eq!(
-            true,
-            Solution::is_match(
-                "aasdfasdfasdfasdfas".to_owned(),
-                "aasdf.*asdf.*asdf.*asdf.*s".to_owned()
-            )
-        );
+        let test_vectors: Vec<(bool, &'static str, &'static str)> = vec![
+            (false, "aa", "a"),
+            (true, "aa", "*"),
+            (false, "cb", "?a"),
+            (true, "adceb", "*a*b"),
+            (false, "acdcb", "a*c?b"),
+            (true, "aaaabaaaabbbbaabbbaabbaababbabbaaaababaaabbbbbbaabbbabababbaaabaabaaaaaabbaabbbbaababbababaabbbaababbbba", "*****b*aba***babaa*bbaba***a*aaba*b*aa**a*b**ba***a*a*"),
+            (true, "abefcdgiescdfimde", "ab*cd?i*de"),
+        ];
+        for (i, &(valid, s, p)) in test_vectors.iter().enumerate() {
+            assert!(
+                valid == Solution::is_match(s.to_string(), p.to_string()),
+                "expected test vector i={:?}, s={:?}, p={:?} to be {}",
+                i,
+                s,
+                p,
+                valid
+            );
+        }
     }
 }
