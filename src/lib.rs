@@ -15,6 +15,7 @@ pub mod n0009_palindrome_number;
 pub mod n0010_regular_expression_matching;
 pub mod n0011_container_with_most_water;
 pub mod n0012_integer_to_roman;
+pub mod n0013_roman_to_integer;
 pub mod n0014_longest_common_prefix;
 pub mod n0015_3sum;
 pub mod n0016_3sum_closest;
