@@ -34,6 +34,7 @@ pub mod n0039_combination_sum;
 pub mod n0040_combination_sum_ii;
 pub mod n0041_first_missing_positive;
 pub mod n0044_wildcard_matching;
+pub mod n0049_group_anagrams;
 pub mod n0053_maximum_subarray;
 pub mod n0067_add_binary;
 pub mod n0083_remove_duplicates_from_sorted_list;
