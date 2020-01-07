@@ -47,3 +47,4 @@ pub mod n0125_valid_palindrome;
 pub mod n0136_single_number;
 pub mod n0155_min_stack;
 pub mod n0218_the_skyline_problem;
+pub mod n0822_unique_morse_code_words;
