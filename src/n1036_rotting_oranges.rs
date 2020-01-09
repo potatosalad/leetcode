@@ -66,6 +66,7 @@ fn has_fresh_orange(grid: &[Vec<i32>]) -> bool {
     grid.iter().any(|row| row.iter().any(|&val| val == 1))
 }
 
+#[allow(unused_comparisons)]
 fn is_valid(x: usize, y: usize, r: usize, c: usize) -> bool {
     x >= 0 && y >= 0 && x < r && y < c
 }
