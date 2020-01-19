@@ -149,7 +149,7 @@ fn parse_extra_use(code: &str) -> String {
 
 fn build_desc(content: &str) -> String {
     // TODO: fix this
-    content
+    let mut description = content
         .replace("<br>", "")
         .replace("<br/>", "")
         .replace("<br />", "")
@@ -190,5 +190,18 @@ fn build_desc(content: &str) -> String {
         .replace("&minus;", "-")
         .replace("&#39;", "'")
         .replace("\n\n", "\n")
-        .replace("\n", "\n * ")
+        .replace("\n", "\n * ");
+    while let Some(begin) = description.find("<a ") {
+        let end = (&description[begin..]).find('>').unwrap();
+        description.replace_range(begin..=(begin + end), "");
+    }
+    while let Some(begin) = description.find("<img ") {
+        let end = (&description[begin..]).find('>').unwrap();
+        description.replace_range(begin..=(begin + end), "");
+    }
+    while let Some(begin) = description.find("<span ") {
+        let end = (&description[begin..]).find('>').unwrap();
+        description.replace_range(begin..=(begin + end), "");
+    }
+    description
 }

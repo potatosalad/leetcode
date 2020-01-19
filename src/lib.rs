@@ -60,4 +60,5 @@ pub mod n0940_fruit_into_baskets;
 pub mod n0965_unique_email_addresses;
 pub mod n1014_k_closest_points_to_origin;
 pub mod n1036_rotting_oranges;
+pub mod n1042_flower_planting_with_no_adjacent;
 pub mod n1079_letter_tile_possibilities;
