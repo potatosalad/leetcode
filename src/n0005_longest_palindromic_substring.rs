@@ -32,6 +32,13 @@ fn is_palindrome(bytes: &&[u8]) -> bool {
         .eq(bytes.iter().rev().take(half_length))
 }
 
+fn is_palindrome_str(s: &str) -> bool {
+    let half_length = s.len() / 2;
+    s.chars()
+        .take(half_length)
+        .eq(s.chars().rev().take(half_length))
+}
+
 fn is_palindrome_unicode(graphemes: &&[&str]) -> bool {
     let half_length = graphemes.len() / 2;
     graphemes
@@ -61,6 +68,19 @@ impl Solution {
             .next()
             .unwrap_or_default()
     }
+
+    pub fn longest_palindrome_str(s: String) -> String {
+        let mut out = String::new();
+        for (i, c) in s.chars().enumerate() {
+            for j in s.rmatch_indices(c).map(|(x, _)| x).filter(|&x| x >= i) {
+                let ss = &s[i..=j];
+                if is_palindrome_str(ss) && ss.len() > out.len() {
+                    out = ss.to_string();
+                }
+            }
+        }
+        out
+    }
 }
 
 // submission codes end
@@ -82,5 +102,17 @@ mod tests {
             Solution::longest_palindrome_unicode("ay̆y̆a".to_owned()),
             "ay̆y̆a"
         );
+        assert_eq!(
+            Solution::longest_palindrome_str("aaaaa".to_owned()),
+            "aaaaa"
+        );
+        assert_eq!(
+            Solution::longest_palindrome_str("babab".to_owned()),
+            "babab"
+        );
+        assert_eq!(Solution::longest_palindrome_str("babcd".to_owned()), "bab");
+        assert_eq!(Solution::longest_palindrome_str("cbbd".to_owned()), "bb");
+        assert_eq!(Solution::longest_palindrome_str("bb".to_owned()), "bb");
+        assert_eq!(Solution::longest_palindrome_str("".to_owned()), "");
     }
 }
