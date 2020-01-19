@@ -54,6 +54,7 @@ pub mod n0232_implement_queue_using_stacks;
 pub mod n0238_product_of_array_except_self;
 pub mod n0292_nim_game;
 pub mod n0388_longest_absolute_file_path;
+pub mod n0450_delete_node_in_a_bst;
 pub mod n0459_repeated_substring_pattern;
 pub mod n0461_hamming_distance;
 pub mod n0482_license_key_formatting;
