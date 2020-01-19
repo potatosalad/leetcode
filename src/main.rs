@@ -5,9 +5,11 @@ extern crate serde_json;
 
 mod problem;
 
+use std::collections::BTreeSet;
 // use std::env;
 use std::fs;
 use std::io;
+use std::io::BufRead;
 use std::io::Write;
 use std::path::Path;
 
@@ -88,12 +90,51 @@ fn main() {
         file.write_all(source.as_bytes()).unwrap();
         drop(file);
 
-        let mut lib_file = fs::OpenOptions::new()
-            .write(true)
-            .append(true)
+        let mut first_line: Option<usize> = None;
+        let mut last_line: Option<usize> = None;
+        let mut headers: Vec<String> = Vec::new();
+        let mut modules: BTreeSet<String> = BTreeSet::new();
+        let mut trailers: Vec<String> = Vec::new();
+        let input = fs::OpenOptions::new()
+            .read(true)
             .open("./src/lib.rs")
             .unwrap();
-        writeln!(lib_file, "pub mod {};", file_name).unwrap();
+        let buffered = io::BufReader::new(input);
+        for (i, line) in buffered.lines().map(|line| line.unwrap()).enumerate() {
+            if line.starts_with("pub mod n") {
+                if first_line.is_none() {
+                    first_line = Some(i);
+                }
+                last_line = Some(i);
+                modules.insert(line);
+            } else if first_line.is_none() {
+                headers.push(line);
+            } else {
+                trailers.push(line);
+            }
+        }
+        if first_line.is_none() || last_line.is_none() {
+            let mut lib_file = fs::OpenOptions::new()
+                .write(true)
+                .append(true)
+                .open("./src/lib.rs")
+                .unwrap();
+            writeln!(lib_file, "pub mod {};", file_name).unwrap();
+        } else {
+            modules.insert(format!("pub mod {};", file_name));
+            let mut lib_file = fs::OpenOptions::new()
+                .write(true)
+                .truncate(true)
+                .open("./src/lib.rs")
+                .unwrap();
+            for line in headers
+                .into_iter()
+                .chain(modules.into_iter())
+                .chain(trailers.into_iter())
+            {
+                writeln!(lib_file, "{}", line).unwrap();
+            }
+        }
         break;
     }
 }

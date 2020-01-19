@@ -51,6 +51,7 @@ pub mod n0162_find_peak_element;
 pub mod n0218_the_skyline_problem;
 pub mod n0227_basic_calculator_ii;
 pub mod n0232_implement_queue_using_stacks;
+pub mod n0238_product_of_array_except_self;
 pub mod n0292_nim_game;
 pub mod n0388_longest_absolute_file_path;
 pub mod n0459_repeated_substring_pattern;
