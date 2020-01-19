@@ -51,6 +51,7 @@ pub mod n0218_the_skyline_problem;
 pub mod n0227_basic_calculator_ii;
 pub mod n0232_implement_queue_using_stacks;
 pub mod n0292_nim_game;
+pub mod n0388_longest_absolute_file_path;
 pub mod n0459_repeated_substring_pattern;
 pub mod n0461_hamming_distance;
 pub mod n0482_license_key_formatting;
