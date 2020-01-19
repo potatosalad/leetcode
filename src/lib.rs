@@ -56,4 +56,5 @@ pub mod n0461_hamming_distance;
 pub mod n0822_unique_morse_code_words;
 pub mod n0940_fruit_into_baskets;
 pub mod n0965_unique_email_addresses;
+pub mod n1014_k_closest_points_to_origin;
 pub mod n1036_rotting_oranges;
