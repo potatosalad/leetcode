@@ -64,6 +64,7 @@ pub mod n0450_delete_node_in_a_bst;
 pub mod n0459_repeated_substring_pattern;
 pub mod n0461_hamming_distance;
 pub mod n0482_license_key_formatting;
+pub mod n0567_permutation_in_string;
 pub mod n0822_unique_morse_code_words;
 pub mod n0909_snakes_and_ladders;
 pub mod n0940_fruit_into_baskets;
