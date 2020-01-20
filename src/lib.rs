@@ -47,6 +47,7 @@ pub mod n0119_pascals_triangle_ii;
 pub mod n0121_best_time_to_buy_and_sell_stock;
 pub mod n0125_valid_palindrome;
 pub mod n0136_single_number;
+pub mod n0140_word_break_ii;
 pub mod n0155_min_stack;
 pub mod n0162_find_peak_element;
 pub mod n0218_the_skyline_problem;

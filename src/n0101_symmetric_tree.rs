@@ -66,6 +66,7 @@ impl Solution {
         }
     }
 }
+
 // submission codes end
 
 #[cfg(test)]
