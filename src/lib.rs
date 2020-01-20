@@ -42,6 +42,7 @@ pub mod n0067_add_binary;
 pub mod n0083_remove_duplicates_from_sorted_list;
 pub mod n0088_merge_sorted_array;
 pub mod n0101_symmetric_tree;
+pub mod n0108_convert_sorted_array_to_binary_search_tree;
 pub mod n0118_pascals_triangle;
 pub mod n0119_pascals_triangle_ii;
 pub mod n0121_best_time_to_buy_and_sell_stock;
