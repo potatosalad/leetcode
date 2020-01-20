@@ -53,6 +53,7 @@ pub mod n0139_word_break;
 pub mod n0140_word_break_ii;
 pub mod n0155_min_stack;
 pub mod n0162_find_peak_element;
+pub mod n0199_binary_tree_right_side_view;
 pub mod n0218_the_skyline_problem;
 pub mod n0227_basic_calculator_ii;
 pub mod n0232_implement_queue_using_stacks;
