@@ -25,6 +25,7 @@ pub mod n0019_remove_nth_node_from_end_of_list;
 pub mod n0021_merge_two_sorted_lists;
 pub mod n0023_merge_k_sorted_lists;
 pub mod n0024_swap_nodes_in_pairs;
+pub mod n0028_implement_strstr;
 pub mod n0030_substring_with_concatenation_of_all_words;
 pub mod n0031_next_permutation;
 pub mod n0032_longest_valid_parentheses;
