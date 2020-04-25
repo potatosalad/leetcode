@@ -69,6 +69,7 @@ pub mod n0567_permutation_in_string;
 pub mod n0688_knight_probability_in_chessboard;
 pub mod n0822_unique_morse_code_words;
 pub mod n0909_snakes_and_ladders;
+pub mod n0925_long_pressed_name;
 pub mod n0940_fruit_into_baskets;
 pub mod n0953_verifying_an_alien_dictionary;
 pub mod n0965_unique_email_addresses;
