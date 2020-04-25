@@ -67,6 +67,7 @@ pub mod n0482_license_key_formatting;
 pub mod n0551_student_attendance_record_i;
 pub mod n0567_permutation_in_string;
 pub mod n0688_knight_probability_in_chessboard;
+pub mod n0717_1_bit_and_2_bit_characters;
 pub mod n0822_unique_morse_code_words;
 pub mod n0909_snakes_and_ladders;
 pub mod n0925_long_pressed_name;
