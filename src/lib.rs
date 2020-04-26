@@ -78,6 +78,7 @@ pub mod n0949_largest_time_for_given_digits;
 pub mod n0953_verifying_an_alien_dictionary;
 pub mod n0965_unique_email_addresses;
 pub mod n1014_k_closest_points_to_origin;
+pub mod n1021_remove_outermost_parentheses;
 pub mod n1036_rotting_oranges;
 pub mod n1042_flower_planting_with_no_adjacent;
 pub mod n1051_height_checker;
